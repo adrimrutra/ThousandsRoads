@@ -1,0 +1,23 @@
+﻿<div class="col-md-12">
+    
+        <div class="row mail-title">
+            <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p col-th-xs-p col-th-sm-p">Від кого</div>
+            <div class="col-th-md-3 col-th-sm-3 col-th-xs-6 col-th-xs-p">Тип відгуку</div>
+            <div class="col-th-md-3 col-th-sm-3 col-th-xs-6">Дата</div>
+        </div>
+    
+
+    <div class="row mail col-th-md-p col-th-sm-p col-th-xs-p" data-ng-repeat="comment in CurentUser.Comments" data-ng-class="{'comment-row':$even}">
+        <div class="row">
+            <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p comment-name">{{comment.Messenger.DisplayName}}</div>
+            <div class="col-th-md-3 col-th-sm-3 col-th-xs-6 col-th-xs-p comment-message" data-ng-class="{'positive':comment.Type == 1 , 'neutrual':comment.Type == 2 , 'negative':comment.Type == 3}">{{GetCommentType(comment.Type)}}</div>
+            <div class="col-th-md-3 col-th-sm-3 col-th-xs-6 comment-message">{{GetDateString(comment.Data)}}</div>
+
+        </div>
+        <div class="row">
+            <div class="col-th-md-12 col-th-sm-12 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p comment-message">{{comment.Message}}</div>
+        </div>
+    </div>
+</div>
+
+      

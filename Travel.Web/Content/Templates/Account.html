@@ -1,0 +1,76 @@
+﻿<div data-ng-controller="AccountController" id="account-controller">
+    <!--<div class="pull-right" style="outline:1px dotted red">
+        <div class="pull-left">-->
+    <div class="row">
+        <div class="pull-right column-nt">
+            <div data-ng-if="false" class="column-odnoklassniki pull-left" data-ng-click="OdnoklassnikiLogin()">
+                <figure class="odnoklassniki"></figure>
+            </div>
+            <div data-ng-if="false" class="column-vkontakte pull-left" data-ng-click="VkontakteLogin()">
+                <figure class="vkontakte"></figure>
+            </div>
+            <div data-ng-hide="User" class="column-facebook pull-left" data-ng-click="FacebookLogin()">
+                <figure class="facebook"></figure>
+            </div>
+
+            <h3 class="loged" data-ng-show="User">
+                <span class="label label-default">
+                    <a href="/#/cabinet">
+                        <small>{{User.DisplayName}}</small><span><img src="Content/Images/pero.png"></span>
+                    </a>
+                    <a href="#" data-ng-click="Exit()"><small>exit</small></a>
+                </span>
+            </h3>
+
+        </div>
+    </div>
+    <!--</div>
+    </div>-->
+
+
+
+
+
+
+
+
+    <div class="modal fade" data-backdrop="static" id="registration">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" data-ng-click="Exit()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img data-ng-src="{{User.Avatar}}" alt="your photos" class="img-thumbnail">
+                        </div>
+                        <div class="col-sm-8">
+                            <div></div>
+
+                            <div class="form-group">
+                                <label for="display-name">Display name</label>
+                                <input type="text" data-ng-model="UserInfo.name" class="form-control" id="display-name" placeholder="Enter email">
+                            </div>
+
+                            <div class="form-group input-group">
+                                <input type="email" class="form-control" data-ng-model="UserInfo.email" placeholder="Email">
+                                <span class="input-group-addon">@</span>
+                            </div>
+
+                            <!--<div class="btn-group form-group">
+                                <button type="button" class="btn btn-default">Driver</button>
+                                <button type="button" class="btn btn-default">Passanger</button>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-ng-click="Exit()" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" data-ng-click="Registration()" class="btn btn-primary">Start now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear:both"></div>

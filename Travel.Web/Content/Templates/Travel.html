@@ -1,0 +1,325 @@
+﻿<div class="row">
+    <div class="col-md-offset-1 col-md-11  travel-detail">
+        <div class="row ng-scope">
+            <div class="col-xs-12 col-md-12">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6" style="display:table">
+
+                        <!-- ============================================================================================ -->
+
+                        <div class="col-xs-5 col-md-5 col-th-xs-12 form-group padd-null" data-tooltip="Hello">
+                            <div class="left-driver-photo">
+                                <img class="img-rounded" data-ng-src="{{Driver.Avatar}}" alt="your photos" />
+                            </div>
+                        </div>
+                        <!-- ============================================================================================ -->
+                        <div class="col-xs-7 col-md-7 col-th-xs-12">
+
+                            <span class="span-driver">Driver</span>
+                            <span class="span-name">{{Driver.DisplayName}}</span>
+                            <span class="span-rating">
+                                ({{Driver.Rating}})
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                            </span>
+
+                            <div class="form-group">
+                                <div class="yellow-btn my-pull-left" data-tooltip="Проглянути/Залишити відгук" data-ng-click="GetRatingForm()"><img src="content/Images/comment.png" /></div>
+                                <div class="yellow-btn" data-tooltip="Надіслати павідомлення"><img src="Content/Images/message.png" /></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-7 col-md-7">
+                                    <span class="span-calendar"><img src="Content/Images/travel-calendar.png" /> {{GetDateString(CurrentTravel.Startdate , DefaultDateFormat)}}</span>
+                                </div>
+
+                                <div class="col-xs-5 col-md-5">
+                                    <span class="span-capacity"><img src="Content/Images/travel-capacity.png" /> {{CurrentTravel.Capacity}}</span>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+
+                                <div class="col-xs-7 col-md-7">
+                                    <span class="span-clock"><img src="Content/Images/travel-clock.png" /> {{GetTimeString(CurrentTravel.Startdate , DefaultDateFormat)}}</span>
+                                </div>
+
+                                <div class="col-xs-5 col-md-5">
+                                    <span class="span-luggage">
+                                        <img src="Content/Images/travel-luggage.png" />
+                                        <span data-ng-show="CurrentTravel.Luggage == 1">5-10 kg</span>
+                                        <span data-ng-show="CurrentTravel.Luggage == 2">10-15 kg</span>
+                                        <span data-ng-show="CurrentTravel.Luggage == 3">15-20 kg</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- ============================================================================================ -->
+
+
+                    </div>
+
+                    <div class="col-xs-12 col-md-6 padd-null">
+                        <div class="row"></div>
+
+                        <div class="navbar bs-docs-nav" role="banner">
+                            <div class="navbar-header">
+                                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#mutual-friends-collaps">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!--<div data-toggle="collapse" data-target="#mutual-friends-collaps"><span class="span-mutual">Спільні Друзі</span></div>-->
+                                <div data-toggle="collapse" data-target="#mutual-friends-collaps">
+                                    <span class="span-mutual visible-xs" style="margin-left:15px; margin-top:10px;cursor:pointer">Спільні Друзі</span>
+                                </div>
+                            </div>
+                            <nav id="mutual-friends-collaps" class="navbar-collapse collapse" role="navigation">
+                                <div class="col-md-12 col-xs-12 padd-null">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 hidden-xs form-group">
+                                            <span class="span-mutual">Спільні Друзі</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2 col-xs-2 friend-column" data-ng-repeat="friend in Friends.Friends">
+                                            <img data-ng-src="{{friend.Avatar}}" alt="friend photo" />
+                                            <span class="span-friend form-group">{{friend.Name}}</span>
+                                            <img class="arrow-friend" src="Content/Images/sign.png" data-ng-if="!$last" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="main-info col-xs-12 col-md-12">
+                <div class="row" id="cont">
+                    <!-- ---------------------------------------------------------------------------- -->
+
+                    <div class="route col-xs-12 col-md-3 padd-null">
+                        <!-- ---------------------------------------------------------------------------- -->
+                        <div class="navbar bs-docs-nav" role="banner">
+                            <div class="navbar-header">
+                                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#mapPoint">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div data-toggle="collapse" data-target="#mapPoint">
+                                    <span class="span-mutual" style="margin-left:15px; margin-top:10px;cursor:pointer">Подорожуємо через...</span>
+                                </div>
+                            </div>
+                            <nav id="mapPoint" class="navbar-collapse collapse" role="navigation">
+                                <div id="point-container">
+                                    <ul class="list-group" id="ul-point">
+                                        <li class="start-point"><img src="Content/Images/map-point-travel.png" /><span data-ng-repeat="name in GetNameMappoint(CurrentTravel.Startpoint)"> {{name}}</span></li>
+                                        <li class="start-point"><img src="Content/Images/marshrut.png" /><span data-ng-repeat="name in GetNameMappoint(CurrentTravel.Endpoint)"> {{name}}</span> </li>
+                                    </ul>
+                                    <div class="form-group" id="true-point">через</div>
+
+                                </div>
+
+                                <ol id="selectable" data-ui-selectable>
+                                    <li class="ui-widget-content info-point" data-ng-repeat="point in CurrentTravel.MapPoints"><span data-ng-repeat="name in GetNameMappoint(point.Name)">{{name}}</span></li>
+                                </ol>
+
+
+
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-9 padd-null form-group">
+                        <div class="col-md-12 travel-map-container">
+                            <!--<figure id="map_canvas" data-ui-map="RoadMap" class="col-md-8 google-map" data-ui-options="MapOptions"></figure>-->
+                            <div id="travel-map-canvas" data-ui-map="RoadMap" class="google-map" data-ui-options="MapOptions"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-12 padd-null">
+                    <div class="back-btn pull-left" data-ng-click="GoBack()"><a><img src="Content/Images/back-btn.png" /></a></div>
+                    <div class="yellow-btn pull-right" data-toggle="modal" data-ng-if=" Driver.Id != CurentUserId" data-ng-click="TravelSubscription()">Я їду до дому</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="modal fade" id="subscribe" tabindex="-1" role="dialog" aria-labelledby="ModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" id="ModalLabel1" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Ваша заявка відправлена водію. На вашу електронну скриньку будуть
+                        надісланні повідомлення з контактною інформацією.
+                        Дякуємо, що зкористалися нашим сервісом.
+                    </p>
+                    <p> Щасливої дороги !</p>
+                </div>
+                <div class="my-modal-footer">
+                    <div class="yellow-btn pull-right" data-dismiss="modal">Закрити</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="modal fade" id="authorization" tabindex="-1" role="dialog" aria-labelledby="ModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" id="ModalLabel2" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Щоб підписатись на поїздку вам потрібно зареєструватись!
+                    </p>
+                </div>
+                <div class="my-modal-footer">
+                    <div class="yellow-btn pull-right" data-dismiss="modal">Закрити</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="modal fade" id="rating" tabindex="-1" role="dialog" aria-labelledby="ModalLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" id="ModalLabel3" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <span class="span-rating">РЕЙТИНГ {{Driver.DisplayName}}  ({{Driver.Rating}})</span>
+                    <img class="ing-rating" src="Content/Images/rating.png" />
+
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table my-table">
+                            <tr class="my-title">
+                                <th>ВІДГУК</th>
+                                <th class="my-table">ОСТАННІ 7 ДНІВ</th>
+                                <th class="my-table">УСІ</th>
+                            </tr>
+                            <tr>
+                                <td class="side-title-positive">ПОЗИТИВНІ</td>
+                                <td class="positive">{{GetLastSevenDaysRating(1)}}</td>
+                                <td class="positive">{{GetAllRating(1)}}</td>
+                            </tr>
+                            <tr>
+                                <td class="side-title-neutrual">НЕЙТРАЛЬНІ</td>
+                                <td class="neutrual">{{GetLastSevenDaysRating(2)}}</td>
+                                <td class="neutrual">{{GetAllRating(2)}}</td>
+                            </tr>
+                            <tr>
+                                <td class="side-title-negative">НЕГАТИВТНІ</td>
+                                <td class="negative">{{GetLastSevenDaysRating(3)}}</td>
+                                <td class="negative">{{GetAllRating(3)}}</td>
+                            </tr>
+                            <tr class="all-comments">
+                                <td><a class="a-btn" data-ng-click="GetMessageForm()">ЗАЛИШИТИ ВІДГУК</a></td>
+                                <td></td>
+                                <td><a class="a-btn" data-ng-click="GetAllRatingForm()">ПЕРЕГЛЯНУТИ ВІДГУКИ</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+    <div class="modal fade" id="all-rating" tabindex="-1" role="dialog" aria-labelledby="ModalLabel4" aria-hidden="true">
+        <div class="modal-dialog  my-modal-large">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" id="ModalLabel4" class="close" data-ng-click="CloseAllRatingForm()" aria-hidden="true">&times;</button>
+                    <span class="span-rating">РЕЙТИНГ {{Driver.DisplayName}}  ({{Driver.Rating}})</span>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 comment-t">ВІДГУКИ</div>
+                        </div>
+                        <div class="row comment-title form-group">
+                            <div class="col-md-6">Від кого</div>
+                            <div class="col-md-3 type-size">Тип відгуку</div>
+                            <div class="col-md-3 type-size">Дата</div>
+                            <!--<div class="col-md-3">ВІДПОВІДЬ НА ВІДГУК</div>-->
+                        </div>
+                        <div class="comment-container" data-ng-repeat="comment in Driver.Comments" ng-class="{true: 'comment-row'}[Driver.Comments.indexOf(comment)%2==0]">
+                            <div class="row">
+                                <div class="col-md-6 comment-name">{{comment.Messenger.DisplayName}}</div>
+                                <div class="col-md-3 type-size" data-ng-class="{'positive':comment.Type == 1 , 'neutrual':comment.Type == 2 , 'negative':comment.Type == 3}">{{GetCommentType(comment.Type)}}</div>
+                                <div class="col-md-3 type-size">{{GetDateString(comment.Data)}}</div>
+                                <!--<div class="col-md-3">ВІДПОВІДЬ НА ВІДГУК</div>-->
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 comment-message">{{comment.Message}}</div>
+                            </div>
+                        </div>
+                        <!--------------------------------------------------------------------------------------  -->
+                        <!--<div data-pagination class="pagination-sm" total-items="Driver.Comments.length" items-per-page="7"></div>-->
+                        <!-------------------------------------------------------------------------------------  -->
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="my-modal-footer">
+                        <div class="yellow-btn pull-left" data-ng-click="CloseAllRatingForm()">Close</div>
+                        <a class="a-btn pull-right" data-ng-click="GetMessageForm()">ЗАЛИШИТИ ВІДГУК</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="modal fade" id="message-form" tabindex="-1" role="dialog" aria-labelledby="ModalLabel5" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" id="ModalLabel5" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <span class="span-rating">РЕЙТИНГ {{Driver.DisplayName}} <span>  ({{driver.rating}})</span> </span>
+                </div>
+                <div class="modal-body">
+
+                    <div class="btn-group form-group">
+                        <button type="button" class="btn btn-default positive" data-ng-model="CurrentComment.Type" data-btn-radio="1">Позитивний</button>
+                        <button type="button" class="btn btn-default neutrual" data-ng-model="CurrentComment.Type" data-btn-radio="2">Нейтральний</button>
+                        <button type="button" class="btn btn-default negative" data-ng-model="CurrentComment.Type" data-btn-radio="3">Негативний</button>
+                    </div>
+                    <textarea class="form-control my-textarea" data-ng-model="CurrentComment.Message" rows="6" required placeholder="Type your message here !!!"></textarea>
+                </div>
+                <div class="my-modal-footer">
+                    <div class="back-btn pull-left" data-ng-click="CloseMessageForm()"><a><img src="Content/Images/black-back-btn.png" /></a></div>
+                    <div class="yellow-btn pull-right" data-ng-click="SendMessage()">OK</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+</div>
+

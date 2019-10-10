@@ -1,0 +1,101 @@
+﻿<div class="row">
+    <div class="col-md-offset-1 col-md-11 callback-detail">
+        <div class="row ng-scope">
+            <div class="col-md-12 col-xs-12">
+                <!-- ============================================================================================ -->
+
+                <div class="col-th-md-1 col-th-sm-1 col-th-xs-1 form-group">
+                    <div class="back"></div>
+                </div>
+
+                <div class="col-th-md-11 col-th-sm-11 col-th-xs-11 form-group">
+                    <div class="col-th-md-5 col-th-sm-11 col-th-xs-12">
+                        <span class="title-callback">
+                            Якщо у Вас виникли запитання, пропозиції
+                            щодо проекту, просимо поділитися з нами.
+                        </span>
+                    </div>
+                </div>
+                <!-- ============================================================================================ -->
+                <form name="callbackform" novalidate>
+                    <div class="col-th-md-3 col-th-sm-3 col-th-xs-12 col-th-xs-p">
+                        <div class="form-group">
+                            <div class="col-th-md-12">
+                                <input type="text" class="form-control" id="inputName" name="name"  data-ng-model="CurentMessage.MessengerDisplayName" data-ng-minlength=3 placeholder="name" required>
+                                <label class="info-callback form-group" for="inputName">
+                                    ім'я
+                                    <label class="error-callback error" ng-show="callbackform.name.$dirty && callbackform.name.$invalid">
+                                        <small class="error" data-ng-show="callbackform.name.$error.required">Your name is required.</small>
+                                        <small class="error" data-ng-show="callbackform.name.$error.minlength"> Required to be 3 characters</small>
+                                    </label>
+                                </label>
+                     
+                                <input class="form-control" type="email" placeholder="email" id="inputEmail" name="email"  data-ng-model="CurentMessage.MessengerEmail" required />
+                                <label class="info-callback help-block with-errors form-group" for="inputEmail">
+                                    e-mail
+                                    <label class="error-container error-callback"
+                                           ng-show="callbackform.email.$dirty && callbackform.email.$invalid">
+                                        <small class="error" data-ng-show="callbackform.email.$error.required">Your email is required.</small>
+                                        <small class="error" data-ng-show="callbackform.email.$error.email">Please input a valid email.</small>
+                                    </label>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================================================ -->
+
+                    <div class="col-th-md-7 col-th-sm-8 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p">
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="inputText" name="text" data-ng-model="CurentMessage.MessageText" data-ng-minlength=10 rows="10" required placeholder="Type your message here !!!"></textarea>
+                                    <label class="text-callback form-group error-callback" for="inputText">
+                                        <label class="error-callback error" data-ng-show="callbackform.text.$dirty && callbackform.text.$invalid">
+                                            <small class="error" data-ng-show="callbackform.text.$error.required">Your text is required.</small>
+                                            <small class="error" data-ng-show="callbackform.text.$error.minlength">Required to be at least 10 characters</small>
+                                        </label>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                <!-- ============================================================================================ -->
+                <div class="row">
+                    <div class="col-md-12 container-btn form-group">
+                        <div class="yellow-btn pull-right" data-ng-click="SendMessage()">Надіслати</div>
+                    </div>
+                </div>
+                <!-- ============================================================================================ -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="modal fade" id="mailsent" tabindex="-1" role="dialog" aria-labelledby="ModalLabel6" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-callback">
+                    <button type="button" id="ModalLabel6" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Ваше повідомлення відправлено адміністрації сайту і
+                        буде розглянуто якнайшвидше.
+                        Дякуємо, що зкористалися нашим сервісом.
+                    </p>
+                </div>
+                <div class="my-modal-footer">
+                    <div class="yellow-btn pull-right" data-dismiss="modal">Закрити</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+</div>

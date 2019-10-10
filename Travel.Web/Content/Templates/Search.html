@@ -1,0 +1,236 @@
+﻿<!--<div ng-include="GetPageTemplate()"></div>-->
+<div class="row">
+    <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+        <a class="pull-right add-travel" href="/#/travel/new">Додати подорож</a>
+    </div>
+    <div class="col-md-offset-1 col-md-11 col-xs-12 page-search">
+        <!--<div class="col-th-eleven-11 col-xs-eleven-11 form-group">-->
+       
+        <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-th-eleven-md-5 col-th-eleven-sm-4 col-th-eleven-xs-sm-11 col-th-eleven-xs-11">
+
+                <div class="row form-group col-th-md-p col-th-sm-p col-th-xs-p">
+                    <div class="col-th-eleven-md-11 col-th-eleven-sm-11">
+                        <input class="form-control input-lg" placeholder="From" type="text" data-ng-watch="true" data-details="FromPlaceDetails" data-options="PlaceOptions" data-ng-autocomplete data-ng-model="CurentSearch.StartAddress" data-location="CurentSearch.Startpoint" id="address-from" />
+
+                    </div>
+                </div>
+                <!-- ------------------------------------------------------------------------------- -->
+                <!------------------------------------------------------------------------------------->
+
+                <div class="row">
+                    <div class=" col-th-eleven-md-5 col-th-eleven-sm-11 col-th-eleven-xs-sm-5 col-th-eleven-xs-11 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="startdate" data-picker-name="startdate" placeholder="Start Date" data-ng-model="CurentSearch.Startdate" data-max-view="month" data-min-view="month" data-format="dd-mm-yyyy" data-datetimepicker />
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default button-img" data-ng-click="ShowCalendar('startdate')"><img data-ng-src="Content/Images/calendar.png" /></button>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!--<div class="col-th-eleven-md-4 col-th-eleven-sm-9 col-th-eleven-xs-11 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control " data-ng-model="CurentSearch.Startdate">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle button-img" data-toggle="dropdown"><img data-ng-src="Content/Images/clock.png" /></button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#">Day Month Year</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+
+            <!------------------------------------------------------------------------------------->
+
+            <div class="col-th-eleven-md-1 col-th-eleven-sm-3  col-th-eleven-xs-11">
+                <div class="row">
+                    <div class="center col-th-eleven-xs-sm-5 col-th-eleven-xs-5  col-th-eleven-xs-p-null-m-bottom" data-ng-model="CurentSearch.Direction" data-ng-click="CurentSearch.Direction = 2">
+                        <img data-ng-src="Content/Images/cars.png" data-ng-show="CurentSearch.Direction != 2" />
+                        <img data-ng-src="Content/Images/cars-active.png" data-ng-show="CurentSearch.Direction == 2" />
+                    </div>
+                    <div class="car-bottom col-th-eleven-xs-sm-offset-1 col-th-eleven-xs-sm-5 col-th-eleven-xs-offset-1 col-th-eleven-xs-5 col-th-eleven-xs-sm-p-null-m-bottom col-th-eleven-xs-p-null-m-bottom " data-ng-model="CurentSearch.Direction" data-ng-click="CurentSearch.Direction = 1">
+                        <img data-ng-src="Content/Images/car.png" data-ng-show="CurentSearch.Direction != 1" />
+                        <img data-ng-src="Content/Images/car-active.png" data-ng-show="CurentSearch.Direction == 1" />
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+
+            <div class="col-th-eleven-md-5 col-th-eleven-sm-4 col-th-eleven-xs-sm-11 col-th-eleven-xs-11">
+                <div class="row  form-group col-th-md-p col-th-sm-p col-th-xs-p">
+                    <div class="col-th-eleven-11 col-th-eleven-sm-11">
+                        <input class="form-control input-lg" placeholder="From" type="text" data-ng-watch="true" data-details="ToPlaceDetails" data-options="PlaceOptions" data-ng-autocomplete data-ng-model="CurentSearch.EndAddress" data-location="CurentSearch.Endpoint" id="address-to" />
+
+                    </div>
+                </div>
+                <!------------------------------------------------------------------------------------->
+
+                <div class="row">
+                    <div class="col-th-eleven-md-5 col-th-eleven-sm-11 col-th-eleven-xs-sm-5 col-th-eleven-xs-11 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="enddate" data-picker-name="enddate" placeholder="End Date" data-ng-model="CurentSearch.Enddate" data-max-view="month" data-min-view="month" data-format="dd-mm-yyyy" data-datetimepicker />
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default button-img" data-ng-click="ShowCalendar('enddate')"><img data-ng-src="Content/Images/calendar.png" /></button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-th-eleven-md-4 col-th-eleven-sm-9 col-th-eleven-xs-11 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control " data-ng-model="ToTime">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default dropdown-toggle button-img" data-toggle="dropdown"><img data-ng-src="Content/Images/clock.png" /></button>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#">Day Month Year</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>-->
+
+
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------->
+        <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+
+            <div class="col-th-eleven-md-5 col-th-eleven-sm-5 col-th-eleven-xs-sm-8 col-th-eleven-xs-11">
+
+                <!--<div class="row form-group col-th-md-p col-th-sm-p col-th-xs-p">
+                    <div class="col-th-eleven-md-7 col-th-eleven-sm-8 col-th-eleven-xs-7">
+                        <div class="search-title">Можу зачекати </div>
+                    </div>
+                    <div class="col-th-eleven-md-2 col-th-eleven-sm-2 col-th-eleven-xs-4">
+                        <select class=" search-combobox" data-ng-model="CurentSearch.Wait">
+                            <option value="1">5-10хв</option>
+                            <option value="2">10-15хв</option>
+                            <option value="3">15-20хв</option>
+                            <option value="4">20-30хв</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row form-group col-th-md-p col-th-sm-p col-th-xs-p">
+                    <div class="col-th-eleven-md-7 col-th-eleven-sm-8 col-th-eleven-xs-7">
+                        <div class="search-title">Можу приїхати раніше </div>
+                    </div>
+                    <div class="col-th-eleven-md-2 col-th-eleven-sm-2 col-th-eleven-xs-4">
+                        <select class="search-combobox" data-ng-model="CurentSearch.Early">
+                            <option value="1">5-10хв</option>
+                            <option value="2">10-15хв</option>
+                            <option value="3">15-20хв</option>
+                            <option value="4">20-30хв</option>
+                        </select>
+                    </div>
+                </div>-->
+
+                <div class="row form-group col-th-md-p col-th-sm-p col-th-xs-p">
+                    <div class="col-th-eleven-md-7 col-th-eleven-sm-7 col-th-eleven-xs-sm-7 col-th-eleven-xs-9">
+                        <div class="search-title">Вільні місця </div>
+                    </div>
+                    <div class="col-th-eleven-md-1 col-th-eleven-sm-1 col-th-eleven-xs-sm-1 col-th-eleven-xs-2">
+                        <select class="search-combobox" data-ng-model="CurentSearch.Capacity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------------------------------------------------->
+        <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+            <div class="col-th-eleven-md-6 col-th-eleven-sm-6 col-th-eleven-xs-11 loggage">
+                <div class="pull-left" data-ng-model="CurentSearch.Luggage" data-ng-click="CurentSearch.Luggage = 1">
+                    <img data-ng-src="Content/Images/loggage.png" data-ng-show="CurentSearch.Luggage!= 1" />
+                    <img data-ng-src="Content/Images/loggage-active.png" data-ng-show="CurentSearch.Luggage== 1" />
+                    <h6 class="luggage-line">0-5 kg</h6>
+                </div>
+                <div class="pull-left" data-ng-model="CurentSearch.Luggage" data-ng-click="CurentSearch.Luggage = 2">
+                    <img data-ng-src="Content/Images/loggage.png" data-ng-show="CurentSearch.Luggage!=2" />
+                    <img data-ng-src="Content/Images/loggage-active.png" data-ng-show="CurentSearch.Luggage== 2" />
+                    <h6 class="luggage-line">10-15 kg</h6>
+                </div>
+                <div class="pull-left" data-ng-model="CurentSearch.Luggage" data-ng-click="CurentSearch.Luggage = 3">
+                    <img data-ng-src="Content/Images/loggage.png" data-ng-show="CurentSearch.Luggage!=3" />
+                    <img data-ng-src="Content/Images/loggage-active.png" data-ng-show="CurentSearch.Luggage== 3" />
+                    <h6 class="luggage-line">15-25 kg</h6>
+                </div>
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+
+        </div>
+        <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+            <div class="col-th-eleven-md-11 col-th-eleven-sm-11 col-th-eleven-xs-11">
+                <button type="button" class="yellow-btn pull-right" data-ng-click="FindTravel()">Пошук</button>
+            </div>
+        </div>
+    </div>
+    <!--</div>-->
+</div>
+
+
+
+<!-- ############################################################################################################# -->
+<div class="row">
+    <!--<div class="col-md-12">-->
+        <div data-ng-repeat="travel in Travels" data-ng-show="Travels">
+            <div class="row" data-ng-if="Travels.indexOf(travel)%2==0"></div>
+            <div class="col-th-md-5 col-th-xs-12 col-th-md-offset-1 search-segment">
+
+                <div class="row form-group">
+                    <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p-L col-th-sm-md-p-L col-th-sm-p-L col-th-xs-p">
+                        <div class=" map-skin">
+                            <figure ng-style="{'background-image':'url({{travel.Mapsnapshot}})'}"></figure>
+                        </div>
+                    </div>
+                    <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p-R col-th-sm-md-p-R col-th-sm-p-R  col-th-xs-p info-skin">
+                        <div>
+                            <span class="travel-name">{{travel.DisplayName}}</span>
+                            <span class="travel-status">водій</span>
+                        </div>
+
+                        <h5 class="travel-date">{{GetDateString(travel.Startdate, DefaultDateFormat)}}</h5>
+
+                        <span class="travel-adrress"><span data-ng-repeat="name in GetNameMappoint(travel.Startpoint)"> {{name}}</span></span>
+                        <span class="travel-adrress"><span data-ng-repeat="name in GetNameMappoint(travel.Endpoint)"> {{name}}</span></span>
+
+                    </div>
+                </div>
+
+                <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+
+                    <div data-ng-repeat="friend in travel.Friends">
+                        <div class="col-th-md-2 col-th-sm-2 col-th-xs-2 friend">
+                            <img data-ng-src="{{friend.Avatar}}" />
+                            <span class="span-friend">{{DisplayName(friend.Name)}}</span>
+
+                        </div>
+                        <div class="col-th-md-1 col-th-sm-1 col-th-xs-1 cont-arrow" data-ng-if="!$last">
+                            <img class="arrow" src="Content/Images/sign.png" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="yellow-btn custom-btn pull-right" data-ng-click="ViewTravel(travel.Id)">Деталі</div>
+                        <div class="blue-btn custom-btn pull-right" data-ng-if="travel.DriverId == CurentUserId" data-ng-click="EditTravel(travel.Id)">Редагувати</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--</div>-->

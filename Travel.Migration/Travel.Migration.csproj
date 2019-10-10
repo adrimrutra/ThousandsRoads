@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A469F6EC-62ED-4B9F-A8EC-D25B7833EB2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Travel.Migration</RootNamespace>
+    <AssemblyName>Travel.Migration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\MessageConfiguration.cs" />
+    <Compile Include="Configuration\CommentConfiguration.cs" />
+    <Compile Include="Configuration\FriendListConfiguration.cs" />
+    <Compile Include="Configuration\FriendListItemConfiguration.cs" />
+    <Compile Include="Configuration\MapPointConfiguration.cs" />
+    <Compile Include="Configuration\TokenConfiguration.cs" />
+    <Compile Include="Configuration\LuggageConfiguration.cs" />
+    <Compile Include="Configuration\TravelConfiguration.cs" />
+    <Compile Include="Configuration\TravelerConfiguration.cs" />
+    <Compile Include="Configuration\UserConfiguration.cs" />
+    <Compile Include="DbSession.cs" />
+    <Compile Include="Migrations\201404162306581_Init.cs" />
+    <Compile Include="Migrations\201404162306581_Init.designer.cs">
+      <DependentUpon>201404162306581_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404192248379_FixTraveler.cs" />
+    <Compile Include="Migrations\201404192248379_FixTraveler.Designer.cs">
+      <DependentUpon>201404192248379_FixTraveler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404201715351_RemoveTravelTravelers.cs" />
+    <Compile Include="Migrations\201404201715351_RemoveTravelTravelers.Designer.cs">
+      <DependentUpon>201404201715351_RemoveTravelTravelers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404201723074_AddTravelTravelers.cs" />
+    <Compile Include="Migrations\201404201723074_AddTravelTravelers.Designer.cs">
+      <DependentUpon>201404201723074_AddTravelTravelers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404202310400_RemoveRelationMessage.cs" />
+    <Compile Include="Migrations\201404202310400_RemoveRelationMessage.Designer.cs">
+      <DependentUpon>201404202310400_RemoveRelationMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404202321311_AddRelationMessage.cs" />
+    <Compile Include="Migrations\201404202321311_AddRelationMessage.Designer.cs">
+      <DependentUpon>201404202321311_AddRelationMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404212147316_RemoveDriverIdField.cs" />
+    <Compile Include="Migrations\201404212147316_RemoveDriverIdField.Designer.cs">
+      <DependentUpon>201404212147316_RemoveDriverIdField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404221016039_MessageTypeTravelLuggage.cs" />
+    <Compile Include="Migrations\201404221016039_MessageTypeTravelLuggage.Designer.cs">
+      <DependentUpon>201404221016039_MessageTypeTravelLuggage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404221036200_RemoveRelationFriend.cs" />
+    <Compile Include="Migrations\201404221036200_RemoveRelationFriend.Designer.cs">
+      <DependentUpon>201404221036200_RemoveRelationFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404221436007_AddFriendListItems.cs" />
+    <Compile Include="Migrations\201404221436007_AddFriendListItems.Designer.cs">
+      <DependentUpon>201404221436007_AddFriendListItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404221447353_AddFriendOwner.cs" />
+    <Compile Include="Migrations\201404221447353_AddFriendOwner.Designer.cs">
+      <DependentUpon>201404221447353_AddFriendOwner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201404222313551_Friendlist.cs" />
+    <Compile Include="Migrations\201404222313551_Friendlist.Designer.cs">
+      <DependentUpon>201404222313551_Friendlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TravelContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Travel.Common\Travel.Common.csproj">
+      <Project>{49646374-7a56-45f3-8b23-5ac331f3c59a}</Project>
+      <Name>Travel.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travel.Core\Travel.Core.csproj">
+      <Project>{2c25bbf9-e742-4480-b42d-99673b532155}</Project>
+      <Name>Travel.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travel.Entity\Travel.Entity.csproj">
+      <Project>{6f3d6561-f82b-4a4a-ad73-fc1259ea07c9}</Project>
+      <Name>Travel.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Travel.Service\Travel.Service.csproj">
+      <Project>{cefd733c-441b-4a3b-8fd3-d93ba25f8bcf}</Project>
+      <Name>Travel.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404162306581_Init.resx">
+      <DependentUpon>201404162306581_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404192248379_FixTraveler.resx">
+      <DependentUpon>201404192248379_FixTraveler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404201715351_RemoveTravelTravelers.resx">
+      <DependentUpon>201404201715351_RemoveTravelTravelers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404201723074_AddTravelTravelers.resx">
+      <DependentUpon>201404201723074_AddTravelTravelers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404202310400_RemoveRelationMessage.resx">
+      <DependentUpon>201404202310400_RemoveRelationMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404202321311_AddRelationMessage.resx">
+      <DependentUpon>201404202321311_AddRelationMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404212147316_RemoveDriverIdField.resx">
+      <DependentUpon>201404212147316_RemoveDriverIdField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404221016039_MessageTypeTravelLuggage.resx">
+      <DependentUpon>201404221016039_MessageTypeTravelLuggage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404221036200_RemoveRelationFriend.resx">
+      <DependentUpon>201404221036200_RemoveRelationFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404221436007_AddFriendListItems.resx">
+      <DependentUpon>201404221436007_AddFriendListItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404221447353_AddFriendOwner.resx">
+      <DependentUpon>201404221447353_AddFriendOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201404222313551_Friendlist.resx">
+      <DependentUpon>201404222313551_Friendlist.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

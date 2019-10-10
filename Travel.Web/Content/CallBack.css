@@ -1,0 +1,40 @@
+﻿.callback-detail {
+    background: #e1aa26;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 25px 20px;
+}
+.back {
+    width: 30px;
+    height: 153px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAACVCAYAAACD3nBSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo5N0ZCNTM4RUVCQkNFMzExODFFMUU1OTZGQzFDOUU5RCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRTg3QzBFMkNCQkUxMUUzQjFGRThGMjcyMUE5M0Y4NyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRTg3QzBFMUNCQkUxMUUzQjFGRThGMjcyMUE5M0Y4NyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjcyNTBFQUFBQjBCREUzMTFCRDYwQTdEMDg1NDRFMkJCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjk3RkI1MzhFRUJCQ0UzMTE4MUUxRTU5NkZDMUM5RTlEIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+CeySpgAAAc1JREFUeNrsV4tRwzAMzYcBPEJHyAaYCegIHYENCBOwAWQDRmiYIN2gbEC7QIzEKYfji+yzcdOmte/e5WJL1pPiSHKWTQyllASojBlFdtYBzCrA1lfJ6tMS6YG8QMWF0uOOkQDIqPQ4S1+Al9Of8kTvbxwA7Sz0giwF/U8z0Zv1486XyxO9VGpSJUyVcMGl5uYq4R0zXwHwf8r1yeatCac3aSnP8x08HrwCcZJcztFrzSD8ix5s6E+vKAp/emVZ+tNDS9700Keo0bPm8qAMyyn5nz0YK8Dz5dILshTkU/xSc230+r73p2dTYjOsTWnI5XEsYeoICvktXbrSnTBduiJ0YUNiaX26sFQJXZZsXRjrk603YvMe24W5+j1vejafrrFQWzOsdyWMbinIp/j0zn/pugB6tjaHHajkfathLUWnh3sFXbqmzK8AT4AtQAKESxgFlYFv3GRKoaJFFHonC4gNYD/Mm0odLciJDQXgg9bXw+SaJmoLdUFMumGiJiXhCNAryo3OHuTogyOwR1KWIRl2V1ASwR02DuFHlP1lpDm55/yijz0OFn0PRaGXRtRqbU2Yu22MU9Bp7yOF3DxK8EDf7rWk+Ql+NLrcjwADAJBGqK/bE0F1AAAAAElFTkSuQmCC') /*Images/back.png*/;
+    *background: url(Images/back.png); /* For IE 6 and 7 */
+    background-repeat: no-repeat;
+}
+.title-callback {
+    display:block;
+    font-size: 20px;
+    font-family: "CRC35";
+    color: white;
+}
+.info-callback {
+    display:inline-block;
+    font-size: 18px;
+    font-family: "CRC35";
+    color: white;
+}
+
+.error-callback{
+    display:inline;
+    font-size: 17px;
+    font-family: "CRC55";
+    color: #E43F2D;
+}
+
+.my-modal-header-callback {
+    background: #e1aa26;
+}
+.text-callback {
+    display: block;
+    height:10px;
+}

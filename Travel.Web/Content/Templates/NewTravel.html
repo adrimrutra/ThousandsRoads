@@ -1,0 +1,157 @@
+﻿<div class="row">
+    <div class="col-md-offset-1 col-md-11  travel-detail">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <!-- ============================================================================================ -->
+                <div class="row">
+                    <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p">
+
+
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <label class="new-travel-title" for="startdate">дата відправлення</label>
+                        </div>
+
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <div class="col-th-md-7 col-th-sm-9 col-th-xs-12 form-group">
+
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="startdate" data-picker-name="startdate" placeholder="Start Date" data-ng-model="CurrentTravel.Startdate" data-max-view="month" data-min-view="month" data-format="dd-mm-yyyy" data-datetimepicker />
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default button-img" data-ng-click="ShowCalendar('startdate')"><img data-ng-src="Content/Images/calendar.png" /></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--<div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <label class="new-travel-title" for="starttime">час відправлення</label>
+                        </div>
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <div class="col-th-md-5 col-th-sm-5 col-th-xs-12 form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="starttime" data-picker-name="starttime" placeholder="Start Time" data-ng-model="TmpStartDate" data-today-btn="false" data-start-view="hour" data-end-view="hour" data-format="hh:ii" data-datetimepicker />
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default button-img" data-ng-click="ShowCalendar('starttime')"><img data-ng-src="Content/Images/clock.png" /></button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>-->
+
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <label class="new-travel-title" for="enddate">дата прибуття</label>
+                        </div>
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <div class="col-th-md-7 col-th-sm-9 col-th-xs-12 form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="enddate" data-picker-name="enddate" placeholder="End Date" data-ng-model="CurrentTravel.Enddate" data-max-view="month" data-min-view="month" data-format="dd-mm-yyyy" data-datetimepicker />
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default button-img" data-ng-click="ShowCalendar('enddate')"><img data-ng-src="Content/Images/calendar.png" /></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- ============================================================================================ -->
+
+                    <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p">
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <label class="new-travel-title" for="capacity">вільні місця</label>
+                        </div>
+
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                            <div class="col-th-md-2 col-th-sm-3 col-th-xs-3 ">
+                                <input class="form-control" type="number" data-ng-model="CurrentTravel.Capacity" id="capacity" required placeholder="0" />
+                            </div>
+                        </div>
+
+                        <div class="row  col-th-md-p col-th-sm-p col-th-xs-p">
+                            <div class="col-th-md-12 col-th-sm-12 col-th-xs-12 col-th-xs-p loggage form-group">
+                                <div class="pull-left" data-ng-model="CurrentTravel.Luggage" data-ng-click="CurrentTravel.Luggage = 1">
+                                    <img data-ng-src="Content/Images/loggage.png" data-ng-show="CurrentTravel.Luggage!= 1" />
+                                    <img data-ng-src="Content/Images/loggage-active.png" data-ng-show="CurrentTravel.Luggage== 1" />
+                                    <h6 class="luggage-line">0-5 kg</h6>
+                                </div>
+                                <div class="pull-left" data-ng-model="CurrentTravel.Luggage" data-ng-click="CurrentTravel.Luggage = 2">
+                                    <img data-ng-src="Content/Images/loggage.png" data-ng-show="CurrentTravel.Luggage!=2" />
+                                    <img data-ng-src="Content/Images/loggage-active.png" data-ng-show="CurrentTravel.Luggage== 2" />
+                                    <h6 class="luggage-line">10-15 kg</h6>
+                                </div>
+                                <div class="pull-left" data-ng-model="CurrentTravel.Luggage" data-ng-click="CurrentTravel.Luggage = 3">
+                                    <img data-ng-src="Content/Images/loggage.png" data-ng-show="CurrentTravel.Luggage!=3" />
+                                    <img data-ng-src="Content/Images/loggage-active.png" data-ng-show="CurrentTravel.Luggage== 3" />
+                                    <h6 class="luggage-line">15-25 kg</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-------------------------------------------------------------------------------------------------->
+                <!-- ============================================================================================ -->
+                <!-- ============================================================================================ -->
+                <!-- ----------------------------------------------------------------------------------------------->
+                <div class="row form-group">
+                    <div class="col-th-md-4 col-th-sm-12 col-th-xs-12">
+                        <div class="navbar bs-docs-nav" role="banner">
+                            <div class="navbar-header">
+                                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#mapPoint">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <nav id="mapPoint" class="navbar-collapse collapse" role="navigation">
+                                <ol id="selectable" data-ui-selectable>
+                                    <li class="ui-widget-content info-point" data-ng-repeat="point in CurrentTravel.MapPoints">
+                                        <span data-ng-repeat="name in GetNameMappoint(point.Name)">{{name}}</span>
+                                        <div class="remove-mappoint-color pull-right glyphicon glyphicon-remove" data-ng-click="DeleteMapPoint($index)"></div>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <!-- ======================================================================================== -->
+                    <div class="col-th-md-8  col-th-sm-12 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p">
+
+
+                        <!-- ======================================================================================== -->
+                        <div class="form-group">
+                            <label class="new-travel-title" for="address">знайти адресу</label>
+                            <input class="form-control" type="text" data-ng-watch="true" data-details="PlacesDetails" data-options="PlacesOptions" data-ng-autocomplete data-ng-model="Address" id="address" />
+                        </div>
+
+
+
+                        <!-- ======================================================================================== -->
+                        <div id="map_canvas" data-ui-map="RoadMap" google-map"
+                             data-ui-event="{'map-click': 'AddMarker($event, $params)' }"
+                             data-ui-options="MapOptions">
+                        </div>
+                    </div>
+                </div>
+                <!-- ======================================================================================== -->
+                <!-- ======================================================================================== -->
+                <!-- ======================================================================================== -->
+
+
+
+                <div class="row">
+                    <div class="col-th-md-12  col-th-sm-12 col-th-xs-12 col-th-md-p col-th-sm-p col-th-xs-p">
+                        <div data-ng-click="CancelTravel()" class="red-btn pull-left ">Відмінити</div>
+                        <div data-ng-click="SaveTravel()" class="yellow-btn pull-right">Зберегти</div>
+                    </div>
+                </div>
+                <!-- ======================================================================================== -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

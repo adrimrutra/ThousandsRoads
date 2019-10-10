@@ -1,0 +1,40 @@
+<html>
+<head>
+
+    @using System.Web.Mvc;
+    @using Mvc.Mailer;
+
+    <style>
+        .mail-body {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .logo-mail {
+            margin-left: 50px;
+            height: 10px;
+        }
+        .content-mail {
+            min-height: 300px;
+        }
+        .text-mail {
+            color: #006;
+            font-size: 20px;
+            padding-left: 30px;
+        }
+        .road-mail {
+            background-repeat: repeat-x;
+            height: 74px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="mail-body">
+        <div class="logo-mail">@Html.InlineImage("logo", "Thousands Roads")</div>
+        <div class="content-mail">
+            <p class="text-mail">@RenderBody()</p>
+        </div>
+        <div class="road-mail">@Html.InlineImage("road", "Thousands Roads")</div>
+    </div>
+</body>
+</html>

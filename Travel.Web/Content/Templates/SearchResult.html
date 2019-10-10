@@ -1,0 +1,120 @@
+﻿<!--<div class="col-sm-12">
+    <div data-ng-repeat="travel in Travels" data-ng-show="Travels">
+        <div class="row" data-ng-if="Travels.indexOf(travel)%2==0"></div>
+        <div class="col-md-5 col-xs-12 col-md-offset-1 search-segment">
+            <div class="col-md-12">
+                <div class="row form-group">
+                    <div class="col-md-6 col-xs-6 col-th-xs-12 padd-null">
+                        <div class=" map-skin">
+                            <figure ng-style="{'background-image':'url({{travel.Mapsnapshot}})'}"></figure>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-6 col-th-xs-12 info-skin">
+                        <div>
+                            <span class="travel-name">{{travel.DisplayName}}</span>
+                            <span class="travel-status">водій</span>
+                        </div>
+
+                        <h5 class="travel-date">{{GetDateString(travel.Startdate, DefaultDateFormat)}}</h5>
+
+                        <span class="travel-adrress"><span data-ng-repeat="name in GetNameMappoint(travel.Startpoint)"> {{name}}</span></span>
+                        <span class="travel-adrress"><span data-ng-repeat="name in GetNameMappoint(travel.Endpoint)"> {{name}}</span></span>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+                        <div class="col-seven-md-1 photo">
+                            <img src="Content/Images/jenya.png" />
+                            <h6>Masliy J.</h6>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="yellow-btn custom-btn pull-right" data-ng-click="ViewTravel(travel.Id)">Детальніше</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- ======================================================================================================================= -->
+<div class="col-md-12">
+    <a class="pull-right add-travel" href="/#/travel/new">Додати подорож</a>
+    <div data-ng-repeat="travel in Travels" data-ng-show="Travels">
+        <div class="row" data-ng-if="Travels.indexOf(travel)%2==0"></div>
+        <div class="col-th-md-5 col-th-xs-12 col-th-md-offset-1 search-segment">
+
+            <div class="row form-group">
+                <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p-L col-th-sm-md-p-L col-th-sm-p-L col-th-xs-p">
+                    <div class=" map-skin">
+                        <figure ng-style="{'background-image':'url({{travel.Mapsnapshot}})'}"></figure>
+                    </div>
+                </div>
+                <div class="col-th-md-6 col-th-sm-6 col-th-xs-12 col-th-md-p-R col-th-sm-md-p-R col-th-sm-p-R  col-th-xs-p info-skin">
+                    <div>
+                        <span class="travel-name">{{travel.DisplayName}}</span>
+                        <span class="travel-status">водій</span>
+                    </div>
+
+                    <h5 class="travel-date">{{GetDateString(travel.Startdate, DefaultDateFormat)}}</h5>
+
+                    <span class="travel-adrress"><span data-ng-repeat="name in GetNameMappoint(travel.Startpoint)"> {{name}}</span></span>
+                    <span class="travel-adrress"><span data-ng-repeat="name in GetNameMappoint(travel.Endpoint)"> {{name}}</span></span>
+
+                </div>
+            </div>
+
+            <div class="row col-th-md-p col-th-sm-p col-th-xs-p">
+
+                <div data-ng-repeat="friend in travel.Friends">
+                    <div class="col-th-md-2 col-th-sm-2 col-th-xs-2 friend">
+                        <img data-ng-src="{{friend.Avatar}}" />
+                        <span class="span-friend">{{DisplayName(friend.Name)}}</span>
+
+                    </div>
+                    <div class="col-th-md-1 col-th-sm-1 col-th-xs-1 cont-arrow" data-ng-if="!$last">
+                        <img class="arrow" src="Content/Images/sign.png" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="yellow-btn custom-btn pull-right" data-ng-click="ViewTravel(travel.Id)">Деталі</div>
+                    <div class="blue-btn custom-btn pull-right" data-ng-if="travel.DriverId == CurentUserId" data-ng-click="EditTravel(travel.Id)">Редагувати</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

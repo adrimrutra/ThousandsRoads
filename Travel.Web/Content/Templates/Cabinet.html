@@ -1,0 +1,71 @@
+﻿<div class="row">
+    <div class="col-md-offset-1 col-md-11  cabinet-detail">
+        <div class="row ng-scope">
+            <div class="col-md-12 col-xs-12">
+                <!-- ============================================================================================ -->
+
+                <div class="col-md-3 container-xs-12">
+                    <div class="row cabinet-menu">
+                        <div class="col-md-12 col-th-sm-4 col-xs-6">
+                            <div class="curent-user-photo form-group" data-tooltip="Hello">
+                                <img class="img-rounded" src="{{Avatar}}" alt="your photo" />
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-th-sm-8 col-xs-6">
+                            <span class="span-driver">Driver</span>
+                            <span class="span-name">{{CurentUser.DisplayName}}</span>
+                            <span class="span-rating">
+                                ({{CurentUser.Rating}})
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                                <img src="Content/Images/star.png" />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================================================ -->
+
+                <div class="col-md-8 container-xs-12 form-group">
+                    <div class="row cabinet-menu">
+                        <div class="col-th-md-3 col-th-sm-6 col-th-xs-6 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                            <div class="cabinet-green-btn" data-ng-click="GetMailForm()">Повідомлення</div>
+                            <div class="col-md-12 col-xs-12 message-flag" data-ng-if="CountNewMessages()">{{CountNewMessages()}}</div>
+
+                        </div>
+                        <div class="col-th-md-3 col-th-sm-6 col-th-xs-6 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                            <!--<div class="cabinet-green-btn" data-ng-click="GetMyinfoForm()">Мої дані</div>-->
+                        </div>
+                        <div class="col-th-md-3 col-th-sm-6 col-th-xs-6 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                            <div class="cabinet-green-btn" data-ng-click="GetFriendForm()">Мої друзі</div>
+                        </div>
+                        <div class="col-th-md-3 col-th-sm-6 col-th-xs-6 col-th-md-p col-th-sm-p col-th-xs-p form-group">
+                            <div class="cabinet-green-btn" data-ng-click="GetCommentForm()">Відгуки</div>
+                        </div>
+                    </div>
+                    <div class="mail-container" ng-include="GetPageTemplate()">
+
+
+                        <!-- ##############    Template    ######################################## -->
+                        <!-- ##############    Template    ######################################## -->
+
+
+                    </div>
+                </div>
+                <!-- ============================================================================================ -->
+        
+                <!-- ============================================================================================ -->
+                <div class="row">
+                    <div class="col-md-12 container-btn">
+                        <div class="yellow-btn pull-right" data-ng-show="IsMessagePage" data-ng-click="DeleteMessages()">Видалити</div>
+                    </div>
+                </div>
+                <!-- ============================================================================================ -->
+
+
+            </div>
+        </div>
+    </div>
+</div>

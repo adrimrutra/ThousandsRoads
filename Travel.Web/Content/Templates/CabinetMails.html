@@ -1,0 +1,47 @@
+﻿<div class="col-md-12">
+
+    <div class="row mail-title">
+        <div class="col-md-offset-1 col-th-sm-offset-1 col-th-md-4 col-th-sm-4 col-th-xs-6 col-th-xs-p">Від кого</div>
+        <div class="col-th-md-4 col-th-sm-4 col-th-xs-6">Повідомлення</div>
+        <div class="col-th-md-2 col-th-sm-2 col-th-xs-6 col-th-xs-p">Відправлено</div>
+        <!--<div class="col-th-md-2 col-th-sm-2 col-th-xs-6">Відповідь</div>-->
+    </div>
+
+    <div class="row mail col-th-md-p col-th-xs-p col-th-sm-p" data-ng-repeat="message in CurentUserMessages" data-ng-class="{'even-row':$even,'unread': !message.State}">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+
+
+                <div class="row">
+                    <div class="col-th-md-1 col-th-sm-1 col-th-xs-2 col-th-md-p col-th-sm-p col-th-xs-p mail-delete">
+
+                        <input type="checkbox" data-ng-model="flag" data-ng-change="AddPopId(flag, message.Id)">
+
+                    </div>
+                    <div class="col-th-md-4 col-th-sm-4 col-th-xs-10 mail-info">
+                        <img data-ng-src="{{message.MessengerAvatar}}" alt="your photo" />
+                        {{message.MessengerDisplayName}}
+                    </div>
+                    <div class="col-th-md-4 col-th-sm-4 col-th-xs-12 col-th-xs-p mail-theme">
+                        <div data-toggle="collapse" data-parent="#accordion" data-target=".collapse-text-{{$index}}" data-ng-click="MessageRead(message.Id)">{{message.Theme}}</div>
+                    </div>
+                    <div class="col-th-md-2 col-th-sm-2 col-th-xs-6 col-th-xs-p mail-date">{{GetDateString(message.Data)}}</div>
+                    <!--<div class="col-th-md-2 col-th-sm-2 col-th-xs-6 mail-date">{{GetDateString(message.Data)}}</div>-->
+                </div>
+                <div class="row panel-collapse collapse collapse-text-{{$index}}">
+                    <div class="form-group mail-text">{{message.MessageText}}</div>
+                    <div class="row form-group">
+                        <div class="col-md-5 col-xs-5">
+                            <div class="yellow-btn pull-right" data-ng-if="message.Type == 1" data-ng-click="SendMessage(true,message.Id)">Прийняти</div>
+                        </div>
+                        <div class="col-md-2 col-xs-2"></div>
+                        <div class="col-md-5 col-xs-5">
+                            <div class="yellow-btn pull-left" data-ng-if="message.Type == 1" data-ng-click="SendMessage(false,message.Id)">Відхілити</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

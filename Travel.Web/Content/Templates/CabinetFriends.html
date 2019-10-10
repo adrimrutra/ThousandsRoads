@@ -1,0 +1,84 @@
+﻿<!--<div class="col-md-12 friend-row">
+    <div data-ng-repeat="friend in CurentUserFriends.data">
+        <div class="col-th-md-6">
+            <div class="col-th-md-7 friend-name">{{friend.name}}</div>
+            <div class="col-th-md-5">
+                <div class="yellow-btn" data-ng-click="InviteFriend(friend.id)">Запросити</div>
+            </div>
+        </div>
+
+    </div>
+</div>-->
+
+
+<!--<div class="col-md-12 padd-null">
+
+    <div class="row friend-title">
+        <div class="col-th-md-12 col-th-sm-12 col-th-xs-12">Мої друзі</div>
+    </div>
+
+    <div data-ng-repeat="friend in CurentUserFriends.data" >
+        <div class="col-th-md-6 col-th-sm-12 col-th-xs-12" data-ng-class="{'even-row': (0 ==($index + 2) % 4)||(0 ==($index + 5) % 4)}">
+            <div class="col-th-md-8 col-th-sm-8 col-th-xs-8 friend-name friend-row">{{friend.name}}</div>
+            <div class="col-th-md-4 col-th-sm-4 col-th-xs-4 friend-row">
+                <div class="yellow-btn" data-ng-click="InviteFriend(friend.id)">Запросити</div>
+            </div>
+        </div>
+
+    </div>
+</div>-->
+
+
+
+
+<div class="col-md-12">
+    <div class="row mail-container">
+        <div class="row friend-title">
+            <div class="col-th-md-12 col-th-sm-12 col-th-xs-12">Мої друзі</div>
+        </div>
+
+        <div data-ng-repeat="friend in CurentUserFriends.data">
+            <div class="col-th-md-12 col-th-sm-12 col-th-xs-12" data-ng-class="{'even-row': $even}">
+                <div class="col-th-md-8 col-th-sm-8 col-th-xs-8 friend-name friend-row">{{friend.name}}</div>
+                <div class="col-th-md-4 col-th-sm-4 col-th-xs-4 friend-row">
+                    <div class="yellow-btn pull-right" data-ng-click="InviteFriend(friend.id)">Запросити</div>
+                </div>
+            </div>
+
+        </div>
+        <ul class="pager">
+            <li>
+                <a class="my-pager"  data-ng-show="CurentUserFriends.paging.previous" data-ng-click="GetCustomPegeFriend(CurentUserFriends.paging.previous)">Prev</a>
+            </li>
+            <li>
+                <a class="my-pager"  data-ng-show="CurentUserFriends.paging.next" data-ng-click="GetCustomPegeFriend(CurentUserFriends.paging.next)">Next</a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+
+<!--<ul class="friend-row">
+    <li>no</li>
+    <li>No</li>
+    <li>YES</li>
+    <li>YES</li>
+    <li>No</li>
+    <li>No</li>
+    <li>YES</li>
+    <li>YES</li>
+    <li>No</li>
+    <li>No</li>
+    <li>YES</li>
+    <li>YES</li>
+</ul>
+<div class="friend-row">
+
+    <div data-ng-repeat="friend in CurentUserFriends.data">
+        <div>Запросити</div>
+    </div>
+</div>-->

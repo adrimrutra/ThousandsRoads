@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2013.1.3 (Build 702U)" ts="2014-04-22 00:11:48">
+<Class name="ThousandsRoads.Comment">
+<Super>%Persistent</Super>
+<TimeChanged>63279,85160.577841</TimeChanged>
+<TimeCreated>63208,54369.37715</TimeCreated>
+
+<Property name="UserId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="User">
+<Type>Customer</Type>
+</Property>
+
+<Property name="Messenger">
+<Type>Customer</Type>
+</Property>
+
+<Property name="MessengerId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Message">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="500"/>
+</Property>
+
+<Property name="Type">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Data">
+<Type>%Date</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.CommentD</DataLocation>
+<DefaultData>CommentDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.CommentD</IdLocation>
+<IndexLocation>^ThousandsRoads.CommentI</IndexLocation>
+<StreamLocation>^ThousandsRoads.CommentS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="CommentDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>UserId</Value>
+</Value>
+<Value name="3">
+<Value>User</Value>
+</Value>
+<Value name="4">
+<Value>Messenger</Value>
+</Value>
+<Value name="5">
+<Value>MessengerId</Value>
+</Value>
+<Value name="6">
+<Value>Message</Value>
+</Value>
+<Value name="7">
+<Value>Type</Value>
+</Value>
+<Value name="8">
+<Value>Data</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.Customer">
+<Super>%Persistent</Super>
+<TimeChanged>63270,80726.257472</TimeChanged>
+<TimeCreated>63209,85732.166449</TimeCreated>
+
+<Property name="DisplayName">
+<Type>%String</Type>
+</Property>
+
+<Property name="Comments">
+<Type>Comment</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="Luggages">
+<Type>Luggage</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="Tokens">
+<Type>Token</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="FriendListItems">
+<Type>FriendListItem</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="Travelers">
+<Type>Travel</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="Avatar">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="250"/>
+</Property>
+
+<Property name="Email">
+<Type>%String</Type>
+</Property>
+
+<Property name="Rating">
+<Type>%Integer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.CustomerD</DataLocation>
+<DefaultData>CustomerDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.CustomerD</IdLocation>
+<IndexLocation>^ThousandsRoads.CustomerI</IndexLocation>
+<StreamLocation>^ThousandsRoads.CustomerS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="CustomerDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>DisplayName</Value>
+</Value>
+<Value name="3">
+<Value>Comments</Value>
+</Value>
+<Value name="4">
+<Value>Luggages</Value>
+</Value>
+<Value name="5">
+<Value>Tokens</Value>
+</Value>
+<Value name="6">
+<Value>FriendListItems</Value>
+</Value>
+<Value name="7">
+<Value>Travelers</Value>
+</Value>
+<Value name="8">
+<Value>Avatar</Value>
+</Value>
+<Value name="9">
+<Value>Email</Value>
+</Value>
+<Value name="10">
+<Value>Raitegn</Value>
+</Value>
+<Value name="11">
+<Value>Rating</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.FriendList">
+<Super>%Persistent</Super>
+<TimeChanged>63245,85820.554977</TimeChanged>
+<TimeCreated>63208,59655.152167</TimeCreated>
+
+<Property name="Customers">
+<Type>Customer</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="ParentList">
+<Type>FriendListItem</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.FriendListD</DataLocation>
+<DefaultData>FriendListDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.FriendListD</IdLocation>
+<IndexLocation>^ThousandsRoads.FriendListI</IndexLocation>
+<StreamLocation>^ThousandsRoads.FriendListS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="FriendListDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Customers</Value>
+</Value>
+<Value name="3">
+<Value>ParentList</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.FriendListItem">
+<Super>%Persistent</Super>
+<TimeChanged>63277,76550.553427</TimeChanged>
+<TimeCreated>63215,85887.727381</TimeCreated>
+
+<Property name="CustomerList">
+<Type>FriendList</Type>
+</Property>
+
+<Property name="Owner">
+<Type>Customer</Type>
+</Property>
+
+<Property name="Inproces">
+<Type>%Boolean</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.FriendListItemD</DataLocation>
+<DefaultData>FriendListItemDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.FriendListItemD</IdLocation>
+<IndexLocation>^ThousandsRoads.FriendListItemI</IndexLocation>
+<StreamLocation>^ThousandsRoads.FriendListItemS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="FriendListItemDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>CustomerList</Value>
+</Value>
+<Value name="3">
+<Value>Owner</Value>
+</Value>
+<Value name="4">
+<Value>Inproces</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.Luggage">
+<Super>%Persistent</Super>
+<TimeChanged>63212,71526.243324</TimeChanged>
+<TimeCreated>63208,58930.854941</TimeCreated>
+
+<Property name="Startpoint">
+<Type>%String</Type>
+</Property>
+
+<Property name="Endpoint">
+<Type>%String</Type>
+</Property>
+
+<Property name="Travel">
+<Type>Travel</Type>
+</Property>
+
+<Property name="Customer">
+<Type>Customer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.LuggageD</DataLocation>
+<DefaultData>LuggageDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.LuggageD</IdLocation>
+<IndexLocation>^ThousandsRoads.LuggageI</IndexLocation>
+<StreamLocation>^ThousandsRoads.LuggageS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="LuggageDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Startpoint</Value>
+</Value>
+<Value name="3">
+<Value>Endpoint</Value>
+</Value>
+<Value name="4">
+<Value>Travel</Value>
+</Value>
+<Value name="5">
+<Value>Customer</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.MapPoint">
+<Super>%Persistent</Super>
+<TimeChanged>63264,2524.792911</TimeChanged>
+<TimeCreated>63208,4206.608531</TimeCreated>
+
+<Property name="Name">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="500"/>
+</Property>
+
+<Property name="Latitude">
+<Type>%Double</Type>
+</Property>
+
+<Property name="Longitude">
+<Type>%Double</Type>
+</Property>
+
+<Property name="Travel">
+<Type>Travel</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.MapPointD</DataLocation>
+<DefaultData>MapPointDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.MapPointD</IdLocation>
+<IndexLocation>^ThousandsRoads.MapPointI</IndexLocation>
+<StreamLocation>^ThousandsRoads.MapPointS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="MapPointDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Name</Value>
+</Value>
+<Value name="3">
+<Value>Latitude</Value>
+</Value>
+<Value name="4">
+<Value>Longitude</Value>
+</Value>
+<Value name="5">
+<Value>Travels</Value>
+</Value>
+<Value name="6">
+<Value>Travel</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.Message">
+<Super>%Persistent</Super>
+<TimeChanged>63299,686.624228</TimeChanged>
+<TimeCreated>63284,62388.630238</TimeCreated>
+
+<Property name="UserId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="MessengerId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="TravelId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Theme">
+<Type>%String</Type>
+</Property>
+
+<Property name="MessageText">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="3000"/>
+</Property>
+
+<Property name="Type">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="State">
+<Type>%Boolean</Type>
+</Property>
+
+<Property name="Direction">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Luggage">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="PersonCount">
+<Type>%Integer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.MessageD</DataLocation>
+<DefaultData>MessageDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.MessageD</IdLocation>
+<IndexLocation>^ThousandsRoads.MessageI</IndexLocation>
+<StreamLocation>^ThousandsRoads.MessageS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="MessageDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>UserId</Value>
+</Value>
+<Value name="3">
+<Value>Theme</Value>
+</Value>
+<Value name="4">
+<Value>Message</Value>
+</Value>
+<Value name="5">
+<Value>State</Value>
+</Value>
+<Value name="6">
+<Value>MessageText</Value>
+</Value>
+<Value name="7">
+<Value>MessengerId</Value>
+</Value>
+<Value name="8">
+<Value>TravelId</Value>
+</Value>
+<Value name="9">
+<Value>Direction</Value>
+</Value>
+<Value name="10">
+<Value>Luggage</Value>
+</Value>
+<Value name="11">
+<Value>PersonCount</Value>
+</Value>
+<Value name="12">
+<Value>Messenger</Value>
+</Value>
+<Value name="13">
+<Value>Type</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.Token">
+<Super>%Persistent</Super>
+<TimeChanged>63244,85806.641851</TimeChanged>
+<TimeCreated>63208,58252.091551</TimeCreated>
+
+<Property name="Tokentype">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="SocialId">
+<Type>%String</Type>
+</Property>
+
+<Property name="User">
+<Type>Customer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.TokenD</DataLocation>
+<DefaultData>TokenDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.TokenD</IdLocation>
+<IndexLocation>^ThousandsRoads.TokenI</IndexLocation>
+<StreamLocation>^ThousandsRoads.TokenS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="TokenDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Tokentype</Value>
+</Value>
+<Value name="3">
+<Value>SocialId</Value>
+</Value>
+<Value name="4">
+<Value>User</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.Travel">
+<Super>%Persistent</Super>
+<TimeChanged>63298,84057.31787</TimeChanged>
+<TimeCreated>63208,4160.033315</TimeCreated>
+
+<Property name="Capacity">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Startdate">
+<Type>%DeepSee.Datatype.dateTime</Type>
+</Property>
+
+<Property name="Starttime">
+<Type>%Time</Type>
+</Property>
+
+<Property name="Enddate">
+<Type>%Date</Type>
+</Property>
+
+<Property name="Travelers">
+<Type>Traveler</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="Luggage">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="MapPoints">
+<Type>MapPoint</Type>
+<Collection>list</Collection>
+</Property>
+
+<Property name="Startpoint">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="500"/>
+</Property>
+
+<Property name="Endpoint">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="500"/>
+</Property>
+
+<Property name="DriverId">
+<Type>%Integer</Type>
+</Property>
+
+<Property name="Mapsnapshot">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="2000"/>
+</Property>
+
+<Property name="Direction">
+<Type>%Integer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.TravelD</DataLocation>
+<DefaultData>TravelDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.TravelD</IdLocation>
+<IndexLocation>^ThousandsRoads.TravelI</IndexLocation>
+<StreamLocation>^ThousandsRoads.TravelS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="TravelDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Capacity</Value>
+</Value>
+<Value name="3">
+<Value>Startdate</Value>
+</Value>
+<Value name="4">
+<Value>Enddate</Value>
+</Value>
+<Value name="5">
+<Value>Travelers</Value>
+</Value>
+<Value name="6">
+<Value>Luggages</Value>
+</Value>
+<Value name="7">
+<Value>MapPoints</Value>
+</Value>
+<Value name="8">
+<Value>Comments</Value>
+</Value>
+<Value name="9">
+<Value>Startpoint</Value>
+</Value>
+<Value name="10">
+<Value>Endpoint</Value>
+</Value>
+<Value name="11">
+<Value>DriverId</Value>
+</Value>
+<Value name="12">
+<Value>Mapsnapshot</Value>
+</Value>
+<Value name="13">
+<Value>RoadDirection</Value>
+</Value>
+<Value name="14">
+<Value>Luggage</Value>
+</Value>
+<Value name="15">
+<Value>Direction</Value>
+</Value>
+<Value name="16">
+<Value>Starttime</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ThousandsRoads.Traveler">
+<Super>%Persistent</Super>
+<TimeChanged>63265,86079.364933</TimeChanged>
+<TimeCreated>63208,58611.050319</TimeCreated>
+
+<Property name="Travel">
+<Type>Travel</Type>
+</Property>
+
+<Property name="User">
+<Type>Customer</Type>
+</Property>
+
+<Property name="CustomerType">
+<Type>%Integer</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ThousandsRoads.TravelerD</DataLocation>
+<DefaultData>TravelerDefaultData</DefaultData>
+<IdLocation>^ThousandsRoads.TravelerD</IdLocation>
+<IndexLocation>^ThousandsRoads.TravelerI</IndexLocation>
+<StreamLocation>^ThousandsRoads.TravelerS</StreamLocation>
+<ExtentSize>100000</ExtentSize>
+<Data name="TravelerDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Travel</Value>
+</Value>
+<Value name="3">
+<Value>Customer</Value>
+</Value>
+<Value name="4">
+<Value>CustomerType</Value>
+</Value>
+<Value name="5">
+<Value>User</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+</Export>

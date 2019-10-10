@@ -1,0 +1,67 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="row travels">
+
+            <div class="panel panel-default">
+                <div class="panel panel-heading"></div>
+                <div class="panel panel-body">
+                    <div class="form-group">
+                        <label for="capacity">Capacity</label>
+                        <input class="form-control" type="number" data-ng-model="CurrentTravel.Capacity" id="capacity" required placeholder="0" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startdate">Start date</label>
+                        <input class="form-control" type="datetime" data-datepicker-popup="dd MMMM yyyy" ng-required data-ng-model="CurrentTravel.Startdate" id="startdate" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enddate">End date</label>
+                        <input class="form-control" type="datetime" data-datepicker-popup="dd MMMM yyyy" data-ng-model="CurrentTravel.Enddate" id="enddate" required />
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <div class="input-group">
+
+                            <span class="input-group-addon"> <span class="glyphicon glyphicon-map-marker "></span></span>
+                            <div >
+                                <input class="form-control col-md-6" type="text" data-ng-watch="true" data-details="PlacesDetails" data-options="PlacesOptions" data-ng-autocomplete data-ng-model="Address" id="address" />
+                               
+                            </div>
+                           
+                                <span class="input-group-addon" data-ng-click="FindAddress()"><span data-ng-click="FindAddress()" class="glyphicon glyphicon-search "></span></span>
+                           
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul data-ng-repeat="point in CurrentTravel.MapPoints"><li>{{point.Name}}</li></ul>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div id="map_canvas"  class="col-md-8 google-map"
+                                 data-ui-event="{'map-click': 'AddMarker($event, $params)' }"
+                                 data-ui-options="MapOptions">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="panel panel-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!--<google-maps id="google-maps" data-points="CurrentTravel.MapPoints" style="width:450px; height:300px;"></google-maps>-->
+                            <div data-ng-click="CancelTravel()" class="btn btn-warning">Cancel</div>
+                            <div data-ng-click="SaveTravel()" class="btn btn-success">Save</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

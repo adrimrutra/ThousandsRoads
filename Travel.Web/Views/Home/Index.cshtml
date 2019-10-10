@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@section scripts{
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places&sensor=true"></script>
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/other")
+    @Scripts.Render("~/oauth")
+    @Scripts.Render("~/bundles/Application")
+}
+<div data-ng-app="Application" data-auth-interceptor data-ng-controller="ApplicationController" id="application">
+    <a class="column-logo visible-xs" href="/#/home">
+        <figure class="logo"></figure>
+    </a>
+    <a class="column-logo hidden-xs" href="/#/home">
+        <figure class="logo"></figure>
+    </a>
+    <header class="navbar navbar-static-top bs-docs-nav top-menu" id="top" role="banner">
+        <div>
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="navbar-collapse bs-navbar-collapse collapse top-menu" role="navigation" style="height: 1px;">
+
+                <ul class="nav navbar-nav visible-xs mobile">
+                    <li class="home-mobile"><a href="/#/home">Home</a></li>
+                    <li class="forum-mobile"><a href="#">Forum</a></li>
+                    <li class="travels-mobile"><a href="/#/travels">Travels</a></li>
+                    <li class="callback-mobile"><a href="/#/callback">Callback</a></li>
+                    <li class="search-mobile"><a href="/#/search">Search</a></li>
+                </ul>
+                <ul class="nav navbar-nav hidden-xs main pull-right">
+                    <li id="home"><a data-ng-class="{'a-active': ScrollClass == 1}" href="/#/home">Home</a></li>                    
+                    <li id="forum"><a data-ng-class="{'a-active': ScrollClass == 2}" href="#">Forum</a></li>                  
+                    <li id="travel"><a data-ng-class="{'a-active': ScrollClass == 3}" href="/#/travels">Travels</a></li>                    
+                    <li id="callback"><a data-ng-class="{'a-active': ScrollClass == 4}" href="/#/callback">Callback</a></li>                   
+                    <li id="search"><a data-ng-class="{'a-active': ScrollClass == 5}" href="/#/search">Search</a></li>                   
+                </ul>
+                            
+            </nav>
+        </div>
+    </header>
+
+    <div id="container">
+        <div class="row" id="body-row">
+            <div class="col-xs-10 col-sm-11">
+                <div class="col-xs-12 social-nt" data-ng-include="AccountTemplate"></div>
+
+                <div data-ng-view class="content">
+                    
+                     
+                </div>
+            </div>
+            <div class="col-xs-1 pull-right">
+
+                <ul id="scroll_ocnova" class="pull-right">
+                    <li><a data-ng-class="{'scroll-home-active': ScrollClass == 1}" title="Home" href="#/home"></a></li>
+                    <li><a data-ng-class="{'scroll-forum-active': ScrollClass == 2}" title="Forum" href="#"></a></li>
+                    <li><a data-ng-class="{'scroll-travel-active': ScrollClass == 3}" title="Travels" href="/#/travels"></a></li>
+                    <li><a data-ng-class="{'scroll-callback-active': ScrollClass == 4}" title="Callback" href="/#/callback"></a></li>
+                    <li><a data-ng-class="{'scroll-search-active': ScrollClass == 5}" title="Search" href="/#/search"></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    @*<div id="help-floating" class="help-fixed"><img src="Content/Images/help-btn.png" /></div>*@
+    <div class="road">
+    </div>
+    <div class="my-footer">
+    </div>
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+    <div class="modal fade" id="interseptorauthorization" tabindex="-1" role="dialog" aria-labelledby="ModalLabel7" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="my-modal-header my-modal-header-travel">
+                    <button type="button" id="ModalLabel2" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Вам потрібно авторизуватись!
+                    </p>
+                </div>
+                <div class="my-modal-footer">
+                    <div class="yellow-btn pull-right" data-ng-click="FacebookLogin()">Авторизація</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+
+</div>
